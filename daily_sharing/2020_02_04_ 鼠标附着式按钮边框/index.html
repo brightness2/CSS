@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#" class="button">Button1</a>
+	<a href="#" class="button">Button2</a>
+	<a href="#" class="button">Button3</a>
+</body>
+<script>
+	// 光标消失
+	document.body.style.cursor = 'none';
+	// 新建元素div
+	var cursor = document.createElement('div');
+	// 给元素增加class
+	cursor.classList.add('cursor');
+	// 给body添加子元素
+	document.body.appendChild(cursor);
+
+	var follow = document.createElement('div');
+	follow.classList.add('follow');
+	document.body.appendChild(follow);
+
+	// 新建函数 用于删除
+	function move(obj, event) {
+		obj.style = '';
+		obj.style.top = event.clientY + 'px';
+		obj.style.left = event.clientX + 'px';
+	}
+
+	if(cursor) {
+		// 增加鼠标在元素上的移动事件
+		window.addEventListener('mousemove', function(event) {
+			var e = event;
+			var t= e.target;
+			var f = follow;
+			var c = cursor;
+			// 判断元素标签名为a时进行
+			if(t.tagName == 'A') {
+				// 清除红点
+				c.style.backgroundColor = 'transparent';
+				// 给follow设置为当前获取到的元素t的属性
+				f.style.top = t.offsetTop + 'px';
+				f.style.left = t.offsetLeft + 'px';
+				f.style.width = t.clientWidth + 'px';
+				f.style.height = t.clientHeight + 'px';
+				// 进行class添加
+				f.classList.add('on-focus');
+			} else {
+				// 执行函数-清除
+				move(c, e);
+				move(f, e);
+				// 删除class
+				f.classList.remove('on-focus');
+			};
+		});
+	}
+</script>
+</html>

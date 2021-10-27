@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/style.css" rel="stylesheet" /> <!--引入css-->
+    <title>2019_12_23</title>
+</head>
+<body>
+    <div class="container" id="blur"> <!---主窗体-->
+        <div class="content">
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nihil magnam repellendus nostrum nemo? Tempore dolore libero ea molestiae. Delectus iusto nulla architecto eos minima culpa accusamus voluptatum velit vero!</h2>
+            <img src="img/img.jpg" alt="Error!">
+            <a href="#" onclick="toggle()">Read More</a> <!--主窗体触发事件（显示弹窗）-->
+        </div>
+    </div>
+    <div id="popup"> <!---弹出窗体-->
+        <h2>Lorem ipsum dolor sit amet</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nihil magnam repellendus nostrum nemo? Tempore dolore libero ea molestiae. Delectus iusto nulla architecto eos minima culpa accusamus voluptatum velit vero!</p>
+        <a href="#" onclick="toggle()">Close</a><!--弹出窗体触发事件（关闭）-->
+    </div>
+    <script>
+    function toggle () {
+        var blur=document.getElementById("blur"); // 根据id获取元素
+        blur.classList.toggle("active"); // 切换指定id对应的class
+        var popup=document.getElementById("popup"); // 同上
+        popup.classList.toggle("active"); // 同上
+    }
+    </script>
+</body>
+</html>

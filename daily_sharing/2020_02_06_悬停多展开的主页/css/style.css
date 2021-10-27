@@ -1,0 +1,108 @@
+* {
+  margin: 0; /* 外边距 */
+  padding: 0; /* 内边距 */
+  font-family: sans-serif; /* 字体 */
+}
+body {
+  background-color: #007bff !important; /* 背景颜色，权重级别 */
+}
+h1 {
+  text-align: center; /* 字体居中 */
+  margin: 50px auto 120px !important;
+  color: #fff; /* 字体颜色 */
+}
+.main {
+  width: 100%; /* 宽度 */
+  min-height: 380px; /* 最小高度 */
+  text-align: center; /* 字体居中 */
+  position: relative; /* 相对定位 */
+  cursor: pointer; /* 鼠标样式 */
+}
+.service {
+  width: 100%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px; /* 边框圆角 */
+  position: absolute; /* 绝对定位 */
+  bottom: 0; /* 距底部 */
+  z-index: 1; /* 层叠顺序 */
+  box-shadow: 0 0 20px -15px #030380; /* 盒子阴影 */
+  transition: transform 0.8s; /* 过渡时间 */
+}
+.service-logo {
+  box-sizing: border-box;
+  width: 136px;
+  line-height: 100px; /* 行高 */
+  border-radius: 50%;
+  margin: -90px auto 0;
+  background-color: #fff;
+  border: 18px solid #007bff;
+  transition: 1s;
+}
+.service-logo img {
+  width: 50%;
+  vertical-align: middle; /* 垂直对齐方式 */
+  margin: auto;
+}
+.service h4 {
+  height: 35px;
+  widows: 70%;
+  background: #fff;
+  margin: 50px auto;
+  position: relative;
+
+}
+
+.service h4::after { /* 之后添加 */
+  content: ''; /* 内容 */
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(to right, #fff, #007bff); /* 渐变背景 */
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: -1;
+}
+
+.service h4::before { /* 之前添加 */
+  content: '';
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(to right, #007bff, #fff);
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+
+.shadowOne {
+  background: #fff;
+  position: absolute;
+  border-radius: 10px;
+  top: 40%;
+  bottom: 0;
+  right: 10%;
+  left: 10%;
+  z-index: -1;
+  box-shadow: 0 0 20px -15px #030380;
+  transition: transform 0.8s;
+}
+.shadowTwo {
+  background: #fff;
+  position: absolute;
+  border-radius: 10px;
+  top: 40%;
+  bottom: 0;
+  right: 18%;
+  left: 18%; 
+  z-index: -2;
+}
+.main:hover .service {
+  transform: translateY(-50px); /* Y轴移动 */
+}
+.main:hover .shadowOne {
+  transform: translateY(-25px);
+}
+.main:hover  .service-logo{
+  transform: rotateZ(-360deg);
+}

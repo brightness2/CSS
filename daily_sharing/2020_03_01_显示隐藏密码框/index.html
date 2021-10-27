@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="inputBox">
+		<input type="password" name='' placeholder="Enter password" id='password'>
+		<div id="toggle" onclick="showHide()"></div>
+	</div>
+	<script>
+		// 获取元素
+		const password = document.getElementById('password');
+		const toggle = document.getElementById('toggle');
+		function showHide() {
+			// 根据属性判断元素进行修改
+			if(password.type === "password") {
+				// 修改属性
+				password.setAttribute('type', "text");
+				// 添加样式类
+				toggle.classList.add('hide');
+			}else {
+				password.setAttribute('type', "password");
+				toggle.classList.remove('hide');
+			}
+		}
+	</script>
+</body>
+</html>

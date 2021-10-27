@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<section>
+			<span class="skewed"></span>
+	</section>
+<script>
+	// 获取根据CSS选择器获取元素
+let skewed = document.querySelector('.skewed')
+// 再窗口中添加scroll事件进行监听
+window.addEventListener('scroll', function () {
+		// -30为元素css设置的值 + 窗口滚动的Y轴值/10
+		let value = -30 + window.scrollY/10
+		// 修改skewY值
+    // skewed.style.transform = 'skewY(' + value + 'deg)' 
+})
+</script>
+</body>
+</html>

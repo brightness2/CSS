@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+* {
+	font-family: "Montserrat", sans-serif !important;
+}
+
+body {
+	min-height: 100vh; /* 最小高度 */
+	display: flex; /* 弹性盒模型 */
+	align-items: center; /* 交叉轴对齐 */
+	justify-content: center; /* 主轴对齐方式 */
+	flex-direction: column; /* 排列方向 */
+}
+
+.reveal {
+  position: relative; /* 相对定位 */
+  font-size: 6em; /* 字符大小 */
+  font-weight: bold; /* 字体维度 */
+  text-transform: uppercase; /* 大写 */
+  background: #fff; /* 背景颜色 */
+  letter-spacing: 0.5em; /* 字符间距 */
+}
+
+span {
+  color: #000; /* 颜色 */
+  /* mix-blend-mode: lighten; 颜色如何混合 */
+}
+/* 阴影 */
+.reveal:before {
+  content: ''; /* 内容 */
+  position: absolute; /* 绝对定位 */
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  border-radius: 50%; /* 边框圆角 */
+  background: #000;
+  animation: reveal 6s linear infinite; 动画：名称，时间，速率，重复
+}
+
+@keyframes reveal {
+  /* 利用left移动实现动画效果 */
+  0% {
+    left: -50px;
+  }
+  50% {
+    left: calc(100% - 150px);
+  }
+  100% {
+    left: -50px;
+  }
+}

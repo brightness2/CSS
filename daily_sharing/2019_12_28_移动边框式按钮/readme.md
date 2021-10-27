@@ -1,0 +1,79 @@
+# 标题
+==教程地址==：[原文地址（YouTube）](https://youtu.be/SP0wAmjbaQ4)
+
+==B站教程==：[原文转载（bilibili）](https://www.bilibili.com/video/av81012321/)
+
+**两个视频的内容相同，第二个为转载**
+
+## 效果图
+>![演示图片](演示.gif)
+
+## 代码区
+
+### html
+```html
+<button class="btn">
+    Hover
+</button>
+```
+### CSS
+```css
+html,body{
+    padding: 0; /*内边距*/
+    margin: 0; /*外边距*/
+    font-family: sans-serif; /*字体*/
+}
+body{
+    background: #353b48; /*背景颜色*/
+    height: 100vh; /*高*/
+    display: flex; /*盒模型*/
+    align-items: center; /*模型Y居中*/
+    justify-content: center; /*模型X轴居中*/
+}
+.btn{
+    width: 200px; /*宽度*/
+    height: 60px; /*高度*/
+    background:none;
+    border: 4px solid; /*边框*/
+    font-weight: 700; /*字体粗细*/
+    text-transform: uppercase; /*字体大写*/
+    cursor: pointer; /*鼠标悬停时的样式*/
+    outline:none; /*点击后按钮不显示边框*/
+    font-size: 16px;
+    position: relative; /*相对定位*/
+    color: #3498db; /*字体颜色*/
+}
+.btn::before,.btn::after{ /*边框上的两个线*/
+    content: ""; /*添加内容*/
+    position: absolute;
+    width: 14px;
+    height: 4px;
+    background: #353b48;
+    transform: skewX(50deg); /*X轴进行倾斜*/
+    transition: 0.5s; /**/
+}
+.btn::before{ 
+    top:-4px; 
+    left: 10%; 
+}
+.btn::after{
+    right: 10%;
+    bottom: -4px;
+}
+.btn:hover::before{ /*当鼠标悬停时*/
+    top:-4px;
+    left: 80%;
+}
+.btn:hover::after{ /*当鼠标悬停时*/
+    right: 80%;
+    bottom: -4px;
+}
+
+```
+### JS
+```javascript
+ //无
+```
+==教程地址==：[原文地址（YouTube）](https://youtu.be/SP0wAmjbaQ4)
+
+==B站教程==：[原文转载（bilibili）](https://www.bilibili.com/video/av81012321/)

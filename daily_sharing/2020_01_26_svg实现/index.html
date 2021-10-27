@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <h2>SVG introduction</h2>
+                <p>可缩放矢量图形（英语：Scalable Vector Graphics，SVG）是一种基于可扩展标记语言（XML），用于描述二维矢量图形的图形格式。SVG由W3C制定，是一个开放标准。</p>
+            </div>
+        </div>
+    </div>
+    <svg>
+        <filter id='wavy'>
+            <feTurbulence x='0' y='0' 
+                baseFrequency='0.02'
+                numOctaves='5'
+                seed='2'>
+                <animate attributeName='baseFrequency' 
+                dur='60s'
+                values='0.02;0.05;0.02'
+                repeatCount='indefinite'
+                />
+            </feTurbulence>
+            <feDisplacementMap in='SourceGraphic' scale='30' />
+        </filter>
+    </svg>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# 标题
+==教程地址==：[原文地址（YouTube）](https://youtu.be/gOFSumPpl5s)
+
+==B站教程==：[原文转载（bilibili）](此处键入链接)
+
+**两个视频的内容相同，第二个为转载**
+## 效果图
+>![演示图片](演示.gif)
+## 代码区
+> **以下代码为本人填写，转载请注明教程地址和本贴地址**
+### html
+```html
+
+```
+### CSS
+```css
+
+```
+### JS
+```javascript
+
+```
+==教程地址==：[原文地址（YouTube）](https://youtu.be/gOFSumPpl5s)
+
+==B站教程==：[原文转载（bilibili）]()

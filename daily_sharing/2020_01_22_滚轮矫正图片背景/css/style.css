@@ -1,0 +1,27 @@
+* {
+  margin: 0; /*外边距*/
+  padding: 0; /*内边距*/
+}
+body{
+  height: 200vh; /*高*/
+  background: #fff; /*背景颜色*/
+}
+section{
+  position: absolute; /*绝对定位*/
+  width: 100%; /*宽*/
+  height: 100vh; /*高*/
+  background: url('../img/bg.jpg'),linear-gradient(230deg, #f533d4, #2461bb); /*背景图片,渐变颜色*/
+  background-blend-mode: luminosity; /*背景图片和背景色的融合模式*/
+  background-size: cover; /*背景图片大小*/
+}
+section .skewed{
+  position: absolute;
+  bottom: -100%; /*距底部*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; 
+  /* transform: skewY(-30deg); 扭曲Y轴-10deg */
+  transform: rotateZ(-45deg);
+  transform-origin:top left ; /*变化开始位置*/
+}

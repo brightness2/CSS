@@ -1,0 +1,120 @@
+*{
+    margin: 0; /*外边距*/
+    padding: 0; /*内边距*/
+    box-sizing: border-box; /*大小规则*/
+    font-family: sans-serif; /*字体*/
+}
+body{
+    display: flex; /*弹性盒模型*/
+    justify-content: center; /*主轴对齐方式*/
+    align-items: center; /*交叉轴对齐方式*/
+    min-height: 100vh; /*最小高度*/
+    flex-direction: column; /*弹性盒布局*/
+    background:#050801 /*背景颜色*/
+}
+a{
+    position: relative; /*相对定位，此处是为了span的定位的父元素为准备*/
+    display: inline-block; /*行内盒模型*/
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: #03e9f4; /*字体颜色的*/
+    font-size: 24px; /*字体大小*/
+    text-decoration: none; /*字体装饰*/
+    text-transform: uppercase; /*字体转变--大写*/
+    transition:0.5s; /*过渡时间*/
+    overflow: hidden; /*超出隐藏*/
+    letter-spacing: 4px; /*字符间距*/
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0005); /*镜面翻转*/
+}
+a:hover{
+    background-color: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4, /*阴影*4*/
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+}
+a:nth-child(4n+1){
+    filter:hue-rotate(110deg)
+}
+a:nth-child(4n+2){
+    filter:hue-rotate(290deg)
+}
+a:nth-child(4n+4){
+    filter:hue-rotate(180deg)
+}
+a span{
+    position: absolute;
+    display: block;
+    width: 100%;
+}
+
+
+/*动画时间为1S，每个边框占用0.25S，每经过一个边框延时播放需要增加0.25s，*/
+a span:nth-child(1){ /*上边框，左上--右上*/
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background:linear-gradient(90deg,transparent,#03e9f4); /*背景渐变*/
+    animation: cc 1s infinite linear; /*动画 name: cc,重复无限次数，线性播放*/
+}
+@keyframes cc{ /*对应边框动画*/
+    0%{
+        left:-100%;
+    }
+    50%,100%{
+        left:100%;
+    }
+}
+a span:nth-child(2){ /*右边框，右上--右下*/
+    top:-100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background:linear-gradient(180deg,transparent,#03e9f4);
+    animation: cc2 1s infinite linear;
+    animation-delay: 0.25s;
+}
+@keyframes cc2{ /*对应边框动画*/
+    0%{
+        top:-100%;
+    }
+    50%,100%{
+        top:100%;
+    }
+}
+a span:nth-child(3){ /*下边框，右下--左下*/
+    bottom:0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background:linear-gradient(270deg,transparent,#03e9f4);
+    animation: cc3 1s infinite linear;
+    animation-delay: 0.5s;
+}
+@keyframes cc3{ /*对应边框动画*/
+    0%{
+        right:-100%
+    }
+    50%,100%{
+        right:100%
+    }
+}
+a span:nth-child(4){ /*左边框，左下--左上*/
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background:linear-gradient(360deg,transparent,#03e9f4);
+    animation: cc4 1s infinite linear;
+    animation-delay: 0.75s;
+}
+@keyframes cc4{ /*对应边框动画*/
+    0%{
+        bottom:-100%
+    }
+    50%,100%{
+        bottom:100%
+    }
+}

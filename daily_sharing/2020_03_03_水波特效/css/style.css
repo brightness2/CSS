@@ -1,0 +1,52 @@
+body{
+  margin: 0; /* 外边距 */
+  padding: 0; /* 内边距 */
+  background: #3498db; /* 背景颜色 */
+}
+.container{
+  position: absolute; /* 绝对定位 */
+  top: 50%; /* 距上部 */
+  left: 50%; /* 距左部 */
+  transform: translate(-50%,-50%) rotateX(70deg); /* 移动，X轴旋转 */
+}
+.ripple{
+  position: fixed; /* 视窗定位 */
+  top: 0;
+  transform: translateX(-50%);
+
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: ripple 4s linear infinite; /* 动画：名称 时间 速率 重复 */
+}
+.r2{
+  /* 延迟时间实现 */
+  animation-delay: 0.8s;
+}
+.r3{
+  animation-delay: 1.6s;
+}
+.r4{
+  animation-delay: 2.4s;
+}
+.r5{
+  animation-delay: 3.2s;
+}
+.r6{
+  animation-delay: 4s;
+}
+
+@keyframes ripple {
+  from{
+    border: 4px solid #8e44ad;
+    background: #9b59b670;
+  }
+  to{
+    border: 0px solid #8e44ad;
+    background: #9b59b670;
+    width: 400px;
+    height: 400px;
+    top: 20px;
+    opacity: 0; /* 透明度 */
+  }
+}

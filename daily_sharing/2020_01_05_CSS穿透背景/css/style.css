@@ -1,0 +1,49 @@
+*{
+    margin: 0; /*外边距*/
+    padding: 0; /*内边距*/
+    box-sizing: border-box; /*大小判断*/
+    outline: none; /*轮廓*/
+    font-family: sans-serif; /*字体*/
+}
+section{
+    position: relative; /*想到定位*/
+    width: 100%; /*宽*/
+    min-height: 100vh; /*最小高*/
+    display: flex; /*弹性盒模型*/
+    justify-content: center; /*主轴居中*/
+    align-items: center; /*副轴*/
+    padding: 50px 0;
+}
+section .content{
+    text-align: center; /*字体居中*/
+}
+section .content h2{
+    font-size: 24vw; /*字体大小*/
+    text-transform: uppercase; /*大写*/
+    font-weight: 900;
+    line-height: 1em; /*行高*/
+    -webkit-background-clip: text; /*背景根据字体裁剪*/
+    color: transparent; /*字体透明*/
+}
+section:nth-child(n+1) .content h2{ /*n1设置*/
+    background-image:linear-gradient(45deg,#2ecc71,#e67e22);
+}
+section:nth-child(n+2) .content h2{
+    background-image:linear-gradient(75deg,#3498db,#8e44ad);
+}
+section:nth-child(n+3) .content h2{
+    background-image:linear-gradient(135deg,#8e44ad,#1abc9c);
+}
+section .content p{
+    max-width:800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+section .content a{
+    display: inline-block; /**/
+    padding: 10px 20px;
+    border: 2px solid #000; /**/
+    text-decoration: none ; /**/
+    color:#000; /**/
+    margin-top: 20px;
+}

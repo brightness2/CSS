@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  display: grid;  /* 网格布局 */
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #f2f2f2;
+}
+.slider{
+  max-width: 1150px;
+  display: flex;
+}
+.slider .card{
+  flex: 1;
+  margin: 0 10px;
+}
+.slider .card .img {
+  height: 200px;
+  width: 100%;
+}
+.slider .card .img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* 对象对齐模式 */
+}
+.slider .card .content {
+  padding: 10px 20px;
+
+}
+.slider .card .content .title{
+  font-size: 25px;
+  font-weight: 600;
+}
+.slider .card .content .sub-tltle{
+  font-size: 20px;
+  font-weight: 600;
+  color: #e74c3c;
+  line-height: 20px;
+}
+.card .content .p {
+  text-align: justify;  /* 字体对齐方式 */
+  margin: 10px 0px;
+}
+.card .content .btn {
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+}
+.card .content .btn button {
+  background: #e74c3c;
+  color: #fff;
+  border:none;
+  outline: none; /* 轮廓 */
+  font-size: 17px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;  /* 光标样式 */
+}
+.card .content .btn button:hover {
+  transform: scale(0.9);  /* 倍率 */
+}

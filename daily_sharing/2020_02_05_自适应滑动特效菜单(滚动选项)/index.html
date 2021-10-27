@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="fullpageMenu" id='nav'>
+		<div class="banner">
+			<img src="img/bg.jpg">
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a href="#" data-text="Home1">Home1</a></li>
+				<li><a href="#" data-text="Home2">Home2</a></li>
+				<li><a href="#" data-text="Home3">Home3</a></li>
+				<li><a href="#" data-text="Home4">Home4</a></li>
+				<li><a href="#" data-text="Home5">Home5</a></li>
+				<li><a href="#" data-text="Home6">Home6</a></li>
+			</ul>
+		</div>
+	</div>
+	<span class="menuicon" id='toggle' onclick="menuToggle()"></span>
+	<script>
+		function menuToggle() {
+			// 根据ID获取元素
+			var nav = document.getElementById('nav');
+			var toggle = document.getElementById('toggle');
+			// 切换active的类
+			nav.classList.toggle('active');
+			toggle.classList.toggle('active')
+		}
+	</script>
+</body>
+</html>

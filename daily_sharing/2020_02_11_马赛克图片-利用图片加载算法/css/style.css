@@ -1,0 +1,41 @@
+body {
+  display: flex; /* 弹性盒模型 */
+  justify-content: center; /* 主轴对齐方式 */
+  align-items: center; /* 交叉轴对齐方式 */
+  min-height: 100vh; /* 最小高度 */
+}
+
+.container {
+  position: relative; /* 相对定位 */
+  width: 900px; /* 宽度 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 图片box */
+.container .pixel {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #000;
+}
+
+.container .pixel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated; /* 图像的拉伸算法,详见下网址 */
+  /* https://developer.mozilla.org/zh-CN/docs/Web/CSS/image-rendering */
+}
+
+/* 最后一个子元素(模糊图片) */
+.container .pixel img:last-child {
+  transition: 2s; /*过渡时间*/
+}
+
+.container .pixel:hover img:last-child {
+  opacity: 0; /*通过修改透明度来显示清晰图*/
+}

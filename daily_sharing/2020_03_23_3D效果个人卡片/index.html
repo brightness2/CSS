@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Card - 3D Hover Effect</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="content">
+        <div class="user"><span class="fas fa-user"></span></div>
+        <header>CodingNepal</header>
+        <div class="follow-us">Follow us on</div>
+        <div class="icons">
+          <a href="#"><span class="fab fa-facebook-f"></span></a>
+          <a href="#"><span class="fab fa-twitter"></span></a>
+          <a href="#"><span class="fab fa-instagram"></span></a>
+          <a href="#"><span class="fab fa-github"></span></a>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('body').mousemove(function(p){
+        let rotateX = -($(window).innerWidth()/2-p.pageX)/20;
+        let rotateY = -($(window).innerHeight()/2-p.pageY)/10;
+        $('.card').css("transform","rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)");
+      });
+      $(document).mouseout(function(){
+        $('.card').css("transform","");
+      });
+    </script>
+
+  </body>
+</html>

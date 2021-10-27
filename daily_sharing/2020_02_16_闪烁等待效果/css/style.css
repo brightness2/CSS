@@ -1,0 +1,44 @@
+* {
+  margin: 0; /* 外边距 */
+  padding: 0; /* 内边距 */
+  font-family: consolas; /* 字体 */
+}
+
+body {
+  display: flex; /* 弹性盒模型 */
+  justify-content: center; /* 主轴对齐方式 */
+  align-items: center; /* 交叉轴对齐方式 */
+  min-height: 100vh; /* 最小高度 */
+  background-color: #000; /* 背景颜色 */
+}
+
+h2 {
+  color: #000; /* 颜色 */
+  font-size: 6em; /* 字体大小 */
+  display: flex;
+}
+
+h2 span{
+  animation: animate 4s linear infinite; /* 动画：名称，时间，速率 重复 */
+}
+
+@keyframes animate {
+  0%,100% {
+    color: #fff;
+    filter: blur(2px); /* 模糊 */
+    text-shadow: /* 阴影 */
+    0 0 10px #00b3ff,
+    0 0 20px #00b3ff,
+    0 0 40px #00b3ff,
+    0 0 80px #00b3ff,
+    0 0 120px #00b3ff,
+    0 0 200px #00b3ff,
+    0 0 300px #00b3ff,
+    0 0 400px #00b3ff;
+  }
+  25%,75% {
+    color: #000;
+    filter: blur(0px);
+    text-shadow:none;
+  }
+}

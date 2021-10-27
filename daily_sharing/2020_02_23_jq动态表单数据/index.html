@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <!-- 输入框 -->
+      <input type="text" class="txtb" placeholder="Add a task">
+      <!-- 未完成 -->
+      <div class="notcomp">
+        <h3>Not Completed</h3>
+      </div>
+      <!-- 已完成 -->
+      <div class="comp">
+        <h3>Completed</h3>
+      </div>
+    </div>
+    <script type="text/javascript">
+      // 添加事件
+      $(".txtb").on("keyup",function(e){
+        //13  对应的是enter按钮
+        if(e.keyCode == 13 && $(".txtb").val() != "")
+        {
+          // 添加一个元素内容(添加的内容主框体)
+          var task = $("<div class='task'></div>").text($(".txtb").val());
+          // 删除按钮
+          var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
+            // 获取父元素
+            var p = $(this).parent();
+            // jq淡出效果隐藏
+            p.fadeOut(function(){
+              //删除元素
+              p.remove();
+            });
+          });
+          // 同上
+          var check = $("<i class='fas fa-check'></i>").click(function(){
+            var p = $(this).parent();
+            p.fadeOut(function(){
+              $(".comp").append(p);
+              // 淡入
+              p.fadeIn();
+            });
+            $(this).remove();
+          });
+
+          task.append(del,check);
+          $(".notcomp").append(task);
+            //清除输入
+          $(".txtb").val("");
+        }
+      });
+    </script>
+
+  </body>
+</html>

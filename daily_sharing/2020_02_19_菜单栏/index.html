@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <div class="menu-container">
+    <!-- 菜单栏 -->
+    <div class="button"><p>Menu</p> 
+      <span class="fas"></span> <!-- 按钮 -->
+    </div>
+    <!-- 子项 -->
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blogs</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Feedback</a></li>
+    </ul>
+  </div>
+  <script>
+    // 文档加载准备
+    $(document).ready(function () {
+      // 添加点击事件
+      $('.button').click(function () {
+        // 判断是否拥有指定class
+        if($(this).hasClass('expand')) {
+          // 下拉事件
+          $("ul").stop().slideUp(function () {
+            $('.button').removeClass('expand');
+            $('.fas').removeClass('expand');
+          });
+        }else{
+          // 添加样式
+          $(this).addClass('expand');
+          setTimeout(function() {
+            $('.fas').addClass('expand');
+            $("ul").stop().slideDown();
+          }, 200)
+        }
+      })
+    })
+  </script>
+</body>
+</html>
